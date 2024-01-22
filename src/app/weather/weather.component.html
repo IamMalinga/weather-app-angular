@@ -1,0 +1,129 @@
+<div class="search" layout-align="center center">
+    <form #form="ngForm" (submit)="onSubmit()">
+      <input type="text" placeholder="Search City" name="city" [(ngModel)]="cityName">
+    </form>
+  </div>
+  
+  <div class="container" *ngIf="weatherData">
+    <div class="upper-data">
+      <img src="../../assets/hot.jpg" *ngIf="weatherData.main.temp > 50">
+      <img src="../../assets/cool.jpg" *ngIf="weatherData.main.temp <= 15">
+  
+      <div class="weather-data">
+        <div class="location">{{weatherData.name}}, {{weatherData.sys.country}}</div>
+        <div class="temp">{{ weatherData.main.temp | number: '1.0-0' }} °C</div>
+        <div class="coord">( Longitude : {{weatherData.coord.lon}} | Latitude : {{weatherData.coord.lat}} )</div>
+      </div>
+    </div>
+  
+    <div class="lower-data">
+      <div class="more-info">
+        More information
+      </div>
+      <div class="more-info-container">
+        <div class="info-block">
+          <div class="info-block-label">
+            <img src="../../assets/min.png" alt="" srcset="">
+            <span>Min</span>
+          </div>
+          <div class="info-block-value">
+            {{weatherData.main.temp_min}} °C
+          </div>
+        </div>
+  
+        <div class="info-block">
+          <div class="info-block-label">
+            <img src="../../assets/max.png" alt="" srcset="">
+            <span>Max</span>
+          </div>
+          <div class="info-block-value">
+            {{weatherData.main.temp_max}} °C
+          </div>
+        </div>
+    
+        <div class="info-block">
+          <div class="info-block-label">
+            <img src="../../assets/humidity.png" alt="" srcset="">
+            <span>Humidity</span>
+          </div>
+          <div class="info-block-value">
+            {{weatherData.main.humidity}}%
+          </div>
+        </div>
+  
+        <div class="info-block">
+          <div class="info-block-label">
+            <img src="../../assets/wind.png" alt="" srcset="">
+            <span>Wind</span>
+          </div>
+          <div class="info-block-value">
+            {{weatherData.wind.speed}} km/h
+          </div>
+        </div>
+  
+        <div class="info-block">
+          <div class="info-block-label">
+            <img src="../../assets/sea-level.png" alt="" srcset="">
+            <span>Sea Level</span> 
+          </div>
+          <div class="info-block-value">
+            {{weatherData.main.sea_level}} hPa
+          </div>
+        </div>
+  
+        <div class="info-block">
+          <div class="info-block-label">
+            <img src="../../assets/soil.png" alt="" srcset="">
+            <span>Ground Level</span>
+          </div>
+          <div class="info-block-value">
+            {{weatherData.main.grnd_level}} hPa
+          </div>
+        </div>
+  
+        <div class="info-block">
+          <div class="info-block-label">
+            <img src="../../assets/pressure.png" alt="" srcset="">
+            <span>Pressure</span>
+          </div>
+          <div class="info-block-value">
+            {{weatherData.main.pressure}} hPa
+          </div>
+        </div>
+  
+        <div class="info-block">
+          <div class="info-block-label">
+            <img src="../../assets/rain.png" alt="" srcset="">
+            <span>Rain</span>
+          </div>
+          <div class="info-block-value">
+            {{weatherData.rain['1h']}}/1h
+          </div>
+        </div>
+  
+        <div class="info-block">
+          <div class="info-block-label">
+            <img src="../../assets/product-description.png" alt="" srcset="">
+            <span>Rain Description</span>
+          </div>
+          <div class="info-block-value">
+            {{weatherData.weather[0].description}}
+          </div>
+        </div>
+  
+        <div class="info-block">
+          <div class="info-block-label">
+            <img src="../../assets/clouds.png" alt="" srcset="">
+            <span>Clouds</span>
+          </div>
+          <div class="info-block-value">
+            {{weatherData.clouds.all}} %
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  
+  <router-outlet></router-outlet>
+  

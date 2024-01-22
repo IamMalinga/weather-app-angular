@@ -1,0 +1,26 @@
+<nav>
+    <div class="nav-content">
+      <div class="logo">
+        <img src="../../assets/dragonlabs.png">
+        <a href="/">Peanut Weather</a>
+      </div>
+      <ul class="nav-links">
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/description">Description</a></li>
+        <li><a routerLink="/about">About</a></li>
+        <li><a routerLink="/contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <script>
+  let nav = document.querySelector("nav");
+    window.onscroll = function() {
+      if(document.documentElement.scrollTop > 20){
+        nav.classList.add("sticky");
+      }else {
+        nav.classList.remove("sticky");
+      }
+    }
+  </script>

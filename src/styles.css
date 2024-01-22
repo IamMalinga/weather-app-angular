@@ -1,0 +1,18 @@
+
+:root {
+    --blue-1 : #3C429E;
+    --blue-2 : #4C52AD;
+    --yellow-1 : #FAC742;
+    --white : #FFF;
+    --grey-1 : #ededed;
+    --shadow-dark : rgba(0,0,0,0.3);
+    --shadow-light : rgba(255,255,255,0.1);
+}
+
+* {
+  font-family: 'poppins';
+}
+
+body {
+  background-color: rgb(50, 44, 68);
+}
